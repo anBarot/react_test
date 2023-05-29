@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1055243676871",
+    "project_id": "finlive-test",
+    "storage_bucket": "finlive-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055243676871:android:4080c848d11b9ade5362e2",
+        "android_client_info": {
+          "package_name": "com.finlive.finlivetest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlXZv9aMQhF8BUn5Fyy2WzA4LBJ1sL48w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
