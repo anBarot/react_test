@@ -1,30 +1,20 @@
 import CustomButton from '../CustomButton';
-import FingerprintScanner from 'react-native-fingerprint-scanner';
+// import FingerprintScanner from 'react-native-fingerprint-scanner';
 import * as LocalAuthentication from 'expo-local-authentication';
-import React, { useEffect } from 'react';
-import { Alert } from 'react-native';
-
-const authenticateWithFingerprint = async () => {
-	const hasHardware = await LocalAuthentication.hasHardwareAsync();
-	const hasEnrolledFingerprints = await LocalAuthentication.isEnrolledAsync();
-  
-	if (hasHardware && hasEnrolledFingerprints) {
-	  const { success, error } = await LocalAuthentication.authenticateAsync({
-		promptMessage: 'Scan your fingerprint',
-	  });
-	  if (success) {
-		Alert.alert('Success', 'Fingerprint authentication successful');
-	  } else {
-		Alert.alert('Error', 'Fingerprint authentication failed');
-	  }
-	} else {
-	  Alert.alert('Error', 'Fingerprint authentication is not available on this device');
-	}
-  };
+import React from 'react';
 
 export default function AuthenticationButton() {
+	const handleAuthentication = async () => {
+		const { success } = await LocalAuthentication.authenticateAsync();
 	
-	  return (
-    	<CustomButton title="Authenticate" onPress={authenticateWithFingerprint} />
+		if (success) {
+	  		alert('Authentication successful');
+		} else {
+	  		alert('Authentication failed');
+		}
+	};
+
+	return (
+    	<CustomButton title="Authenticate" onPress={handleAuthentication} />
 	);
 }
